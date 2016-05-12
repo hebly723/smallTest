@@ -1,0 +1,8 @@
+<?php
+use Think\Controller;
+	class UserController extends Controller{
+	function login(){
+		echo "I'm loginning";
+	}
+}
+?>
