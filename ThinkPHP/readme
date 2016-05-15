@@ -1,0 +1,4 @@
+controller 文件：
+$this->display();//调用view目录下与controller文件名字对应的文件夹下的对应方法名的网页
+$this->display('register');//调用view目录下与controller文件名字对应的文件夹下的对应方法名'register'的网页
+$this->display('Goods/detail')//访问其他控制器的模板文件，Goods是控制器，detail是方法名
