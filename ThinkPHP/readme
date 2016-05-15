@@ -2,3 +2,16 @@ controller 文件：
 $this->display();//调用view目录下与controller文件名字对应的文件夹下的对应方法名的网页
 $this->display('register');//调用view目录下与controller文件名字对应的文件夹下的对应方法名'register'的网页
 $this->display('Goods/detail')//访问其他控制器的模板文件，Goods是控制器，detail是方法名
+模板文件中引用css样式问题（相对/绝对）
+相对路径：相对路口文件index.php来说
+路由方式不同，相对的文件也不同，所以不能简单的相对一个文件
+绝对路径：从虚拟主机站点目录开始设置/phpmyadmin/smalltest/sop/public
+静态资源文件通过绝对路径引入。
+css文件中的引入图片通过相对地址设置：相对css文件本身设置
+模板文件引入css样式文件：css的相对路径可以相对于index.php入口文件设置
+css样式文件引入img图片
+图片的相对路径是css文件本身
+index.html--->css样式--->img图片
+文件被谁引入的，其相对地址就相对于引入文件设置。
+index.php+controller控制器+模板文件==混编文件
+在入口程序文件将路径设成常量，方便后期维护
