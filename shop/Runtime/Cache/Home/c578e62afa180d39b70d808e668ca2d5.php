@@ -34,26 +34,25 @@
 								</h4>
 							</div>
 							<div class="modal-body login_body">
-								<form id="login_input" class="login_input">
+								<form id="login_input" class="login_input" action="<?php echo SHOP_URL ?>?g=Home&&c=Index&&a=login" method="post" >
 									<label for="username">
 										用户名
 									</label><br>
-									<input type="text" id="login_username" placeholder="请输入用户名/账号/手机号"><br>
+									<input type="text" id="login_username" placeholder="请输入用户名/账号/手机号" name="username"><br>
 									<label for="password">
 										密码
 									</label><br>
-									<input type="password" id="login_password" placeholder="请输入密码">
+									<input type="password" id="login_password" placeholder="请输入密码" name="password">
 									<a href="#">忘记密码?</a>
 									<a href="#" data-dismiss="modal">没有账号?去注册！</a>
-								</form>
+								
 							</div>
 							<div class="modal-footer login_foot">
 								<button type="button" class="btn btn-default"data-dismiss="modal">
 									关闭
 								</button>
-								<button type="button" class="btn btn-primary">
-									确定
-								</button>
+								<input type="submit" class="btn btn-primary" value="确定">
+		</form>
 							</div>
 						</div>
 					</div>

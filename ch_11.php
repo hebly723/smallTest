@@ -14,9 +14,13 @@
 		echo 'Could not connect to the database';
 		exit;
 	}
-	$result = $db->query("select username from user;");
-	$array  = $result->fetch_array();
-	echo $array;
+	$result = $db->query("select username from user where username = '455';");
+	$array  = $result->fetch_row();
+	if ($array[0]==''||$array==null)
+		echo '32423423';
+	print_r($array);
+	$array  = $result->fetch_row();
+	print_r($array);
 ?>
 </body>
 </html>

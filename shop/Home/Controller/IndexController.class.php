@@ -14,4 +14,26 @@ p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div styl
  */
 
   }
+    public function login(){
+    header("Content-Type:text/html; charset=utf-8");
+    $username = 'root';
+    $userpass = '';
+    $dbhost   = 'localhost';
+    $dbdatabase = 'hit';
+    $db = new mysqli( $dbhost, $username, $userpass, $dbdatabase);
+    if (mysqli_connect_error()){
+		echo 'Could not connect to the database';
+		exit;
+	}
+    // 构建写入的数据数组
+    $data["username"] = $_POST["username"];
+    $data["password"] = md5($_POST["password"]);
+    $result = $db->query("select * from user where username = ".$data["username"]."&& password = ".$data["password"].";");
+    $array  = $result->fetch_row();
+    if ($array[0]==''||$array[0]==null)
+		$this->show("AD/guanggao");
+$this->show("AD/guanggao");
+
 }
+}
+?>
