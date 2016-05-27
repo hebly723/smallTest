@@ -349,3 +349,14 @@ ERR: Syntax Error in template "/usr/share/phpmyadmin/smallTest/shop/Home/View/In
 [ 2016-05-27T13:37:23+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist
 ERR: Think\Controller:where方法不存在！
 
+[ 2016-05-27T14:25:19+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&id=many%20book
+ERR: 1054:Unknown column '$id' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like $id ) 
+
+[ 2016-05-27T14:25:48+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&id=many%20book
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'book )' at line 1
+ [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like many book ) 
+
+[ 2016-05-27T14:39:20+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=34244
+ERR: 模板不存在:/usr/share/phpmyadmin/smallTest/shop/Home/View/Goods/sorry.html
+

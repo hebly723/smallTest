@@ -18,12 +18,17 @@ header("content-type:text/html;charset=utf-8");
 		//$good = D('Goods');//表名sh_goods
 		//var_dump($good);
 		//实例化父类model对象，同时操作数据表
+		$search    =  $_GET['search'];
 		$book = D('Book');
 		//var_dump($book);
-		$this->where('bookname like \'m%\'');
+		$book->where('bookname like '.'\'%'.$search.'%\'');
 		$info = $book->select();
+		if ($info = null)
+			$this->display('sorry');
+		else{
 		$this->assign('info', $info);
 		$this->display();
+}
 		//echo '<pre>';
 		//var_dump($info);
 		//echo '</pre>';

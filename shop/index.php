@@ -1,6 +1,7 @@
 <!--使用php开发商城shop项目-->
 <?php
 	define('APP_DEBUG', true);//开发模式，错误提示比较具体
+	define('SEARCH_URL', '/phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=');
 	define('CSS_URL', '/phpmyadmin/smallTest/shop/public/css');
 	define('JS_URL', '/phpmyadmin/smallTest/shop/public/js');
 	define('IMG_URL', '/phpmyadmin/smallTest/shop/public/img');
