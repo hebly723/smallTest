@@ -1,4 +1,7 @@
-namespace Home/Model;
+<?php
+namespace Model;
 use Think/Model;
 class UserModel extendsModel{
+	protected $tablePrefix = "think_";
 }
+?>

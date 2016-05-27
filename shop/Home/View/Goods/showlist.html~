@@ -1,0 +1,13 @@
+<html>
+	<body>
+		<table>
+			{foreach $info as $k=>$v}
+				<tr id="product1">
+				<td>{$v.bookname}</td>
+				<td>{$v.writer}</td>
+				<td><img src="{$smarty.const.IMG_URL}{$v.image}"></td>
+				<td>{$v.price}</td>
+			{/foreach}
+		</table>
+	</body>
+</html>
