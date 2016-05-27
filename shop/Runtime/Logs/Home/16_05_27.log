@@ -360,3 +360,19 @@ ERR: 1064:You have an error in your SQL syntax; check the manual that correspond
 [ 2016-05-27T14:39:20+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=34244
 ERR: 模板不存在:/usr/share/phpmyadmin/smallTest/shop/Home/View/Goods/sorry.html
 
+[ 2016-05-27T15:04:08+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=%E6%95%B0%E5%AD%A6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '��学 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like 数学 ) 
+
+[ 2016-05-27T15:04:42+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=%E6%95%B0%E5%AD%A6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '��学 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like 数学 ) 
+
+[ 2016-05-27T15:04:43+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=%E6%95%B0%E5%AD%A6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '��学 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like 数学 ) 
+
+[ 2016-05-27T15:04:43+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=%E6%95%B0%E5%AD%A6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '��学 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like 数学 ) 
+

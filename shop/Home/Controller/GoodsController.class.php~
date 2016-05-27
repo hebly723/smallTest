@@ -21,9 +21,9 @@ header("content-type:text/html;charset=utf-8");
 		$search    =  $_GET['search'];
 		$book = D('Book');
 		//var_dump($book);
-		$book->where('bookname like '.'\'%'.$search.'%\'');
+		//$book->where('bookname like '.'\'%'.$search.'%\'');
 		$info = $book->select();
-		if ($info = null)
+		if ($info == null)
 			$this->display('sorry');
 		else{
 		$this->assign('info', $info);

@@ -138,7 +138,7 @@
 				<div id="shopMath">
 					<div class="shopDetail" id="math">
 						<dl class="shopDetail_item" >
-							<dt><a href="{$smarty.const.SEARCH_URL}math">数学</a><span class="badge hot pull-right"> HOT</span><img class="jiantou" src="{$smarty.const.IMG_URL}/icon/jiantou.jpg" height="8" width="5"></dt>
+							<dt><a href="{$smarty.const.SEARCH_URL}%数学%">数学</a><span class="badge hot pull-right"> HOT</span><img class="jiantou" src="{$smarty.const.IMG_URL}/icon/jiantou.jpg" height="8" width="5"></dt>
 							<dd><a href="#">高等数学</a><a href="#">线性代数</a><a href="#">离散数学</a></dd>
 						</dl>
 					</div>
