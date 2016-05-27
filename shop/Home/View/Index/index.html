@@ -98,8 +98,10 @@
 						<img src="{$smarty.const.IMG_URL}/icon/logo.png" class="img-circle logo" height="75" width="75">
 					</div>
 					<div class="midBar_serch search">
-						<input type="text" class="searchText" placeholder="请输入要查询的内容">
-						<button class="btn-info btn searchBtn">搜索</button>
+					<form method="post" action="?g=Home&c=Index&a=search">
+						<input type="text" class="searchText" name="key" placeholder="请输入要查询的内容">
+						<input type="submit" value=搜索 class="btn-info btn searchBtn">
+					</form>
 					</div>
 					<div class="midBar_shopcar">
 						<div class="shopcar">

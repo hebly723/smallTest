@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-05-27 15:06:30
+<?php /* Smarty version Smarty-3.1.6, created on 2016-05-27 17:10:12
          compiled from "/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:6833492435747c6ad5e40d9-36823686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '849484abfd620353a92e917e38b598cc89700013' => 
     array (
       0 => '/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html',
-      1 => 1464332679,
+      1 => 1464340150,
       2 => 'file',
     ),
   ),
@@ -126,8 +126,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /icon/logo.png" class="img-circle logo" height="75" width="75">
 					</div>
 					<div class="midBar_serch search">
-						<input type="text" class="searchText" placeholder="请输入要查询的内容">
-						<button class="btn-info btn searchBtn">搜索</button>
+					<form method="post" action="?g=Home&c=Index&a=search">
+						<input type="text" class="searchText" name="key" placeholder="请输入要查询的内容">
+						<input type="submit" value=搜索 class="btn-info btn searchBtn">
+					</form>
 					</div>
 					<div class="midBar_shopcar">
 						<div class="shopcar">

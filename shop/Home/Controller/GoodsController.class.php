@@ -23,10 +23,12 @@ header("content-type:text/html;charset=utf-8");
 		//var_dump($book);
 		$book->where('bookname like '.'\'%'.$search.'%\'');
 		$info = $book->select();
+		$count=$book->where('bookname like '.'\'%'.$search.'%\'')->count();
 		if ($info == null)
 			$this->display('sorry');
 		else{
 		$this->assign('info', $info);
+		$this->assign('count', $count);
 		$this->display();
 }
 		//echo '<pre>';

@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+header("Content-type: text/html; charset=utf-8");
 class IndexController extends Controller {
     public function index(){
 $this->show();
@@ -14,6 +15,10 @@ p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div styl
  */
 
   }
+    public function search(){
+	$key = $_POST["key"];
+	redirect('http://localhost/phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search='.$key);
+    }
     public function login(){
     header("Content-Type:text/html; charset=utf-8");
     $username = 'root';
