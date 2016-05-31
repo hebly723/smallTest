@@ -15,30 +15,68 @@ p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div styl
  */
 
   }
-    public function search(){
+  public function search(){
 	$key = $_POST["key"];
-	redirect('http://localhost/phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=%'.$key.'%', 5, '页面跳转中...');
+	redirect('http://localhost/phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search='.$key);
     }
     public function login(){
-    header("Content-Type:text/html; charset=utf-8");
-    $username = 'root';
-    $userpass = '';
-    $dbhost   = 'localhost';
-    $dbdatabase = 'hit';
-    $db = new mysqli( $dbhost, $username, $userpass, $dbdatabase);
-    if (mysqli_connect_error()){
-		echo 'Could not connect to the database';
-		exit;
+    	$name = $_POST['name'];
+	$password = $_POST['password'];
+	$user = D('User');
+	$user->where("username=\"".$name."\" and password=\"".$password."\"");
+	session('[start]');
+	/*if(isset($_SERVER["HTTP_X_REWRITE_URL"])){
+$url = $_SERVER["HTTP_X_REWRITE_URL"].(strpos($_SERVER["HTTP_X_REWRITE_URL"],'?')?'':"?").$this->parameter;
+}else{
+$url = $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'':"?").$this->parameter;
+}*/
+	if($user->select()){
+		$flag = "1";
+		$_SESSION['username'] = $name;
+		$_SESSION['status']   = '1';
+		$_SESSION['fail']   = null;
 	}
-    // 构建写入的数据数组
-    $data["username"] = $_POST["username"];
-    $data["password"] = md5($_POST["password"]);
-    $result = $db->query("select * from user where username = ".$data["username"]."&& password = ".$data["password"].";");
-    $array  = $result->fetch_row();
-    if ($array[0]==''||$array[0]==null)
-		$this->show("AD/guanggao");
-$this->show("AD/guanggao");
+	else{
+		$flag = "0";
+		$fail = "1";
+		$_SESSION['username'] = null;
+		$_SESSION['status'] = null;
+		$_SESSION['fail']   = "1";
+		$go = "<script type=\"text/javascript\">alert(\"Go!\")</script>";
+	}	
+	$url = $this->get_url();
+	//$this->assign('name', $name);
+	//$this->assign('go', $go);
+	//$this->assign('password', $password);
+	//$this->assign('flag', $flag);
+	//$this->assign('fail', $fail);
+	//$this->assign('password', $password);
+	$this->redirect();
+	//$this->display();
+	//redirect('http://localhost/phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search='.$key);
+	//redirect('http://localhost/phpmyadmin/smallTest/shop/');
+    //$result = $db->query("select * from user where username = ".$data["username"]."&& password = ".$data["password"].";");
+    //$array  = $result->fetch_row();
+    //if ($array[0]==''||$array[0]==null)
+	//	$this->show("AD/guanggao");
+//$this->show("AD/guanggao");
 
 }
+public function outline(){
+/**********%%%%%%%%%%%**************/
+	session('[start]');
+	$_SESSION['name'] = null;
+	$_SESSION['id'] = null;
+	$this->display();
+}
+function get_url() {
+    $sys_protocal = isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443' ? 'https://' : 'http://';
+    $php_self = $_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
+    $path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
+    $relate_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : $php_self.(isset($_SERVER['QUERY_STRING']) ? '?'.$_SERVER['QUERY_STRING'] : $path_info);
+    return $sys_protocal.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '').$relate_url;
+}
+ 
+//echo get_url();
 }
 ?>

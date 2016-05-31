@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-05-27 17:10:12
+<?php /* Smarty version Smarty-3.1.6, created on 2016-05-30 09:01:34
          compiled from "/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:6833492435747c6ad5e40d9-36823686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '849484abfd620353a92e917e38b598cc89700013' => 
     array (
       0 => '/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html',
-      1 => 1464340150,
+      1 => 1464570074,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.6',
   'unifunc' => 'content_5747c6ad7a39e',
+  'variables' => 
+  array (
+    'js_arr' => 0,
+    'count' => 0,
+    'fail' => 0,
+    'password' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5747c6ad7a39e')) {function content_5747c6ad7a39e($_smarty_tpl) {?><!DOCTYPE html>
@@ -44,46 +51,47 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="right">
 					<span>欢迎来到XX网!</span>
-					<span><a href="#" data-toggle="modal" data-target="#loginModal">[登录]</a></span>
+					<span><a href="#" data-toggle="modal" data-target="#loginModal"><?php echo $_SESSION['username'];?>
+[登录]</a></span>
 					<span><a href="#" data-toggle="modal" data-target="#registerModal">[免费注册]</a></span>
 				</div>
 				<!--登录弹出框-->
-				<div id="loginModal" class="modal fade" tabindex="-5" role="dialog">
-					<div class="modal-dialog">
-						<div class="modal-content login">
-							<div class="modal-herder login_head">
-								<button type="button" class="close" data-dismiss="modal">
-									&times;
-								</button>
-								<h4 class="modal-title">
-									登录
-								</h4>
-							</div>
-							<div class="modal-body login_body">
-								<form id="login_input" class="login_input" action="<?php echo @SHOP_URL;?>
-?g=Home&&c=Index&&a=login" method="post" >
-									<label for="username">
-										用户名
-									</label><br>
-									<input type="text" id="login_username" placeholder="请输入用户名/账号/手机号" name="username"><br>
-									<label for="password">
-										密码
-									</label><br>
-									<input type="password" id="login_password" placeholder="请输入密码" name="password">
-									<a href="#">忘记密码?</a>
-									<a href="#" data-dismiss="modal">没有账号?去注册！</a>
-								
-							</div>
-							<div class="modal-footer login_foot">
-								<button type="button" class="btn btn-default"data-dismiss="modal">
-									关闭
-								</button>
-								<input type="submit" class="btn btn-primary" value="确定">
-		</form>
+					<div id="loginModal" class="modal fade" tabindex="-5" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content login">
+								<div class="modal-herder login_head">
+									<button type="button" class="close" data-dismiss="modal">
+										&times;
+									</button>
+									<h4 class="modal-title">
+										登录
+									</h4>
+								</div>
+								<div class="modal-body login_body">
+									<form id="login_input" class="login_input" action="?g=Home&c=Index&a=login" method="post" >
+										<label for="username">
+											用户名
+										</label><br>
+										<input type="text" id="login_username" placeholder="请输入用户名/账号/手机号" name="name"><br>
+										<label for="password">
+											密码
+										</label><br>
+										<input type="password" id="login_password" placeholder="请输入密码" name="password">
+										<a href="#">忘记密码?</a>
+										<a href="#" data-dismiss="modal">没有账号?去注册！</a>
+										<input type="submit" id="login_btn" class="login_btn" value = "3423"></input>
+									</form>
+
+								</div>
+								<div class="modal-footer login_foot">
+									<button type="button" class="btn btn-default"data-dismiss="modal">
+										关闭
+									</button>
+									<button type="submit" class="btn btn-primary" onclick="submit()">确定</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				<!--注册弹出框-->
 				<div id="registerModal" class="modal fade " tabindex="-5" role="dialog">
 					<div class="modal-dialog">
@@ -125,12 +133,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<img src="<?php echo @IMG_URL;?>
 /icon/logo.png" class="img-circle logo" height="75" width="75">
 					</div>
-					<div class="midBar_serch search">
-					<form method="post" action="?g=Home&c=Index&a=search">
-						<input type="text" class="searchText" name="key" placeholder="请输入要查询的内容">
-						<input type="submit" value=搜索 class="btn-info btn searchBtn">
+					<form class="midBar_serch search" action="?g=Home&c=Index&a=search" method="post">
+						<input type="text" class="searchText" placeholder="请输入要查询的内容" name="key" >
+						<input class="btn-info btn searchBtn" type="submit" value="搜索"/>
 					</form>
-					</div>
 					<div class="midBar_shopcar">
 						<div class="shopcar">
 							<img src="<?php echo @IMG_URL;?>
@@ -594,6 +600,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		 $("#showOther").css("display","none");
 	});
 	</script>
+<script type="text/javascript">
+	// var book = <?php echo $_smarty_tpl->tpl_vars['js_arr']->value;?>
+;
+	// var bookNum = <?php echo $_smarty_tpl->tpl_vars['count']->value;?>
+;
+	// for(var i=0;i<bookNum;i++){
+	// 	var $list = "<div id='list[i]' class='list'></div>";
+
+	// }
+	var submit = function(){
+		$("#login_btn").click();
+	}
+	var fas = <?php echo $_smarty_tpl->tpl_vars['fail']->value;?>
+;
+	if (fas=="1")
+	{
+		alert("登录失败");
+	}
+	</script>
 </body>
 </html>
+<!--
+<?php echo $_SESSION['name'];?>
+用户名（可判断其是否为空来判断有无登录）
+<?php echo $_SESSION['id'];?>
+未决定
+<?php echo $_smarty_tpl->tpl_vars['fail']->value;?>
+登录失败时传出的参数
+<?php echo $_smarty_tpl->tpl_vars['password']->value;?>
+密码，可选用
+-->
 <?php }} ?>

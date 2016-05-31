@@ -3,21 +3,8 @@ namespace Home\Controller;
 use Think\Controller;
 header("content-type:text/html;charset=utf-8");
 	class GoodsController extends Controller{
-	function showlist(){
-		//echo "I'm loginning";
-		//$goods = new GoodsModel();
-		//$goods = new \Home\Model\GoodsModel();
-		//$model = D();
-		
-		//var_dump($goods);
-		//1.实例化父类model
-		//$model = D();//执行原生的sql语句
-		//var_dump($model);
-		//$this->display();
-		//2.操作数据表
-		//$good = D('Goods');//表名sh_goods
-		//var_dump($good);
-		//实例化父类model对象，同时操作数据表
+	function showlist()
+{
 		$search    =  $_GET['search'];
 		$book = D('Book');
 		//var_dump($book);
@@ -27,13 +14,35 @@ header("content-type:text/html;charset=utf-8");
 		if ($info == null)
 			$this->display('sorry');
 		else{
-		$this->assign('info', $info);
+		$this->assign('js_arr',json_encode($info));
 		$this->assign('count', $count);
 		$this->display();
-}
-		//echo '<pre>';
-		//var_dump($info);
-		//echo '</pre>';
 	}
+}
+public function login()
+{
+    	$name = $_POST['name'];
+	$password = $_POST['password'];
+	$user = D('User');
+	$user->where("username=\"".$name."\" and password=\"".$password."\"");
+	
+	if($user->select())
+	{
+		$flag = "1";
+	}
+	else
+	{
+		$flag = "0";
+		$fail = "1";
+	}	
+	$this->assign('name', $name);
+	$this->assign('go', $go);
+	$this->assign('password', $password);
+	$this->assign('flag', $flag);
+	$this->assign('fail', $fail);
+	$this->display("index");
+	
+	//redirect('http://localhost/phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search='.$key);
+}
 }
 ?>

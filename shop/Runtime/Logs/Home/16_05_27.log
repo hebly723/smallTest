@@ -376,3 +376,57 @@ ERR: 1064:You have an error in your SQL syntax; check the manual that correspond
 ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '��学 )' at line 1
  [ SQL语句 ] : SELECT * FROM `sh_book` WHERE ( bookname like 数学 ) 
 
+[ 2016-05-27T18:17:17+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=
+ERR: Syntax Error in template "/usr/share/phpmyadmin/smallTest/shop/Home/View/Goods/showlist.html"  on line 3 "{wewerwr}" unknown tag "wewerwr"
+
+[ 2016-05-27T18:24:44+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:25:32+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:25:58+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:25:59+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:26:00+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:26:13+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:26:14+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:26:48+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:26:49+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:26:58+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=3
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:49:36+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&c=Goods&a=showlist&search=rewr
+ERR: Unable to load template file 'P/Tpl/dispatch_jump.tpl'
+
+[ 2016-05-27T18:54:38+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&&c=Index&&a=login
+ERR: Unable to parse resource name ""
+
+[ 2016-05-27T18:54:40+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&&c=Index&&a=login
+ERR: Unable to parse resource name ""
+
+[ 2016-05-27T18:55:57+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&&c=Index&&a=login
+ERR: 模板不存在:/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/login.html
+
+[ 2016-05-27T18:55:59+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&&c=Index&&a=login
+ERR: 模板不存在:/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/login.html
+
+[ 2016-05-27T18:56:40+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&&c=Index&&a=login
+ERR: 模板不存在:/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html.html
+
+[ 2016-05-27T18:56:42+08:00 ] 127.0.0.1 /phpmyadmin/smallTest/shop/?g=Home&&c=Index&&a=login
+ERR: 模板不存在:/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html.html
+

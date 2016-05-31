@@ -2,8 +2,9 @@
 return array(
 	//'配置项'=>'配置值'
     'URL_HTML_SUFFIX'       =>  'xml',
-    //'DEFAULT_MODULE'        =>  'Home',
-    //'MODULE_ALLOW_LIST'     =>  array('Home', 'Admin');
+    'DEFAULT_MODULE'        =>  'Home',
+    'MULTI_MODULE'          =>  'true',     
+    'ALLOW_MODULE_LIST'     =>  array('Home', 'Admin','App'),
     'TMPL_ENGINE_TYPE'      =>  'Smarty',     // 默认模板引擎 以下设置仅对使用Think模板引擎有效
     'SHOW_PAGE_TRACE'       =>  true,
     'DB_TYPE'               =>  'mysql',     // 数据库类型

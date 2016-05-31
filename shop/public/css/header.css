@@ -156,6 +156,9 @@ body{
 .login_input input{
 	width:245px;
 }
+.login_btn{
+display:none;
+}
 .login_foot{
 	margin-top: 20px;
 }
