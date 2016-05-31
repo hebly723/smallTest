@@ -1,7 +1,6 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-    'URL_HTML_SUFFIX'       =>  'xml',
     'DEFAULT_MODULE'        =>  'Home',
     'MULTI_MODULE'          =>  'true',     
     'ALLOW_MODULE_LIST'     =>  array('Home', 'Admin','App'),

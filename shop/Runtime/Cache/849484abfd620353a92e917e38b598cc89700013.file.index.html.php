@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-05-30 09:01:34
+<?php /* Smarty version Smarty-3.1.6, created on 2016-05-31 14:52:54
          compiled from "/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:6833492435747c6ad5e40d9-36823686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '849484abfd620353a92e917e38b598cc89700013' => 
     array (
       0 => '/usr/share/phpmyadmin/smallTest/shop/Home/View/Index/index.html',
-      1 => 1464570074,
+      1 => 1464677567,
       2 => 'file',
     ),
   ),
@@ -51,8 +51,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="right">
 					<span>欢迎来到XX网!</span>
-					<span><a href="#" data-toggle="modal" data-target="#loginModal"><?php echo $_SESSION['username'];?>
-[登录]</a></span>
+					<span><a href="#" data-toggle="modal" data-target="#loginModal">[<?php echo $_SESSION['name'];?>
+登录]</a></span>
 					<span><a href="#" data-toggle="modal" data-target="#registerModal">[免费注册]</a></span>
 				</div>
 				<!--登录弹出框-->
@@ -68,20 +68,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 									</h4>
 								</div>
 								<div class="modal-body login_body">
-									<form id="login_input" class="login_input" action="?g=Home&c=Index&a=login" method="post" >
+									<form id="login_input" class="login_input" action="?g=Home&&c=Index&&a=login" method="post" >
 										<label for="username">
 											用户名
 										</label><br>
-										<input type="text" id="login_username" placeholder="请输入用户名/账号/手机号" name="name"><br>
+										<input type="text" id="login_username" placeholder="请输入用户名/账号/手机号" name="username"><br>
 										<label for="password">
 											密码
 										</label><br>
 										<input type="password" id="login_password" placeholder="请输入密码" name="password">
+										<input type="text" id="getURL" value="" name="url" class="login_btn" >
 										<a href="#">忘记密码?</a>
 										<a href="#" data-dismiss="modal">没有账号?去注册！</a>
-										<input type="submit" id="login_btn" class="login_btn" value = "3423"></input>
+										<button type="submit" id="login_btn" class="login_btn"></button>
 									</form>
-
 								</div>
 								<div class="modal-footer login_foot">
 									<button type="button" class="btn btn-default"data-dismiss="modal">
@@ -103,21 +103,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<h4 class="modal-title" >注册用户</h4>
 							</div>
 							<div class="modal-body login_body">
-								<form id="register_input" class="register_input login_input">
+								<form id="register_input" class="register_input login_input" action="?g=Home&&c=Index&&a=register" method="post">
 									<label>填写用户名</label><br>
-									<input type="text" id="register_username" placeholder="请填写您要使用的用户名"><br>
+									<input type="text" id="register_username" placeholder="请填写您要使用的用户名" name="username"><br>
 									<label>填写密码</label><br>
-									<input type="password" id="register_password1" placeholder="请填写您的密码"><br>
+									<input type="password" id="register_password1" placeholder="请填写您的密码" name = "password"><br>
 									<label>确认密码</label><br>
 									<input type="password" id="register_password2" placeholder="请再次填写您的密码来确认">
 									<a href="#" data-dismiss="modal">已有账号? 去登陆！</a>
+									<input type="submit" id="register_btn" class="login_btn">
 								</form>
 							</div>
 							<div class="modal-footer login_foot">
 								<button type="button" class="btn btn-default" data-dismiss="modal">
 									取消
 								</button>
-								<button type="button" class="btn btn-primary">
+								<button type="button" class="btn btn-primary" onclick="register()">
 									注册
 								</button>
 							</div>
@@ -554,6 +555,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	// 		}
 	// 	})
 	// });
+	var submit = function(){
+		$("#login_btn").click();
+	}
+		var nowURL = window.location.href;
+		$("#getURL").attr('value',nowURL);
 
 	//数学菜单
 	$("#shopMath").hover(function() {
@@ -618,7 +624,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	{
 		alert("登录失败");
 	}
+	var submit = function(){
+		$("#login_btn").click();
+	}
+		var nowURL = window.location.href;
+		$("#getURL").attr('value',nowURL);
+	var register = function(){
+		$("#register_btn").click();
+	}
 	</script>
+
 </body>
 </html>
 <!--
